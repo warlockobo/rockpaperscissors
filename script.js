@@ -1,28 +1,24 @@
-function getComputerChoice(){
-    const choices = ["r", "p", "s"];
-    const index = Math.floor(Math.random() * 3);
-    return choices[index];
-}
-const computerChoice = getComputerChoice();
-console.log(computerChoice)
-
-function getHumanChoice(){
-    const humanChoice = prompt("Choose rock, paper, or scissors.");
-
-    return humanChoice[0].toLowerCase();
-}
-
-const humanChoice = getHumanChoice();
-console.log(humanChoice);
-
-
-while (humanScore && computerScore < 5){
-    playRound();
-}
 
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
+
+    function getComputerChoice(){
+        const choices = ["r", "p", "s"];
+        const index = Math.floor(Math.random() * 3);
+        return choices[index];
+    }
+    const computerChoice = getComputerChoice();
+    console.log(computerChoice)
+    
+    function getHumanChoice(){
+        const humanChoice = prompt("Choose rock, paper, or scissors.");
+    
+        return humanChoice[0].toLowerCase();
+    }
+    
+    const humanChoice = getHumanChoice();
+    console.log(humanChoice);
 
     function playRound(computerChoice, humanChoice){
         if (computerChoice === humanChoice) {
@@ -53,4 +49,9 @@ function playGame() {
             computerScore++;
         }
     }
+
+    while (humanScore < 5 && computerScore < 5){
+        playRound();
+    }
 }
+playGame();
