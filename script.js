@@ -1,8 +1,7 @@
-console.log("Hello World!");
-
 function getComputerChoice(){
-   return Math.floor(Math.random() * 3);
+    const choices = ["Rock", "Paper", "Scissors"];
+    const index = Math.floor(Math.random() * 3);
+    return choices[index];
 }
-
 const computerchoice = getComputerChoice();
-console.log(computerchoice);
+console.log(computerchoice)
