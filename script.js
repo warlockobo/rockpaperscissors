@@ -14,7 +14,6 @@ function playGame() {
             return choices[index];
         }
         const computerChoice = getComputerChoice();
-        const container = document.getElementById("container");
         const results = document.getElementById("results")
         const score = document.getElementById("score");
 
@@ -57,6 +56,16 @@ function playGame() {
             computerScore++;
             score.textContent = "User score: " + humanScore + " Computer Score: " + computerScore;
 
+        }
+
+        if (humanScore === 5) {
+            results.textContent = "Congratulations, you got to 5 points first! You win the game!";
+            return;
+        }
+
+        if (computerScore === 5){
+            results.textContent = "The computer got to 5 points first. You lose the game!"
+            return;
         }
     }
 }
