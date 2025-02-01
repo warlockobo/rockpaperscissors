@@ -3,9 +3,10 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    document.getElementById("rock").addEventListener("click", ()=> { playRound("r") });
-    document.getElementById("paper").addEventListener("click", ()=> { playRound("p") });
-    document.getElementById("scissors").addEventListener("click", ()=> { playRound("s") });
+    const options = document.querySelector("#options");
+    const rock = document.getElementById("rock").addEventListener("click", ()=> { playRound("r") });
+    const paper = document.getElementById("paper").addEventListener("click", ()=> { playRound("p") });
+    const scissors = document.getElementById("scissors").addEventListener("click", ()=> { playRound("s") });
 
     function playRound(humanChoice){
         function getComputerChoice(){
@@ -60,11 +61,17 @@ function playGame() {
 
         if (humanScore === 5) {
             results.textContent = "Congratulations, you got to 5 points first! You win the game!";
+            options.removeChild(rock);
+            options.removeChild(paper);
+            options.removeChild(scissors);
             return;
         }
 
         if (computerScore === 5){
             results.textContent = "The computer got to 5 points first. You lose the game!"
+            options.removeChild(rock);
+            options.removeChild(paper);
+            options.removeChild(scissors);
             return;
         }
     }
