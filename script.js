@@ -4,9 +4,18 @@ function playGame() {
     let computerScore = 0;
 
     const options = document.querySelector("#options");
-    const rock = document.getElementById("rock").addEventListener("click", ()=> { playRound("r") });
-    const paper = document.getElementById("paper").addEventListener("click", ()=> { playRound("p") });
-    const scissors = document.getElementById("scissors").addEventListener("click", ()=> { playRound("s") });
+    const rock = document.getElementById("rock");
+    rock.addEventListener("click", ()=> { playRound("r") });
+    const paper = document.getElementById("paper");
+    paper.addEventListener("click", ()=> { playRound("p") });
+    const scissors = document.getElementById("scissors");
+    scissors.addEventListener("click", ()=> { playRound("s") });
+
+    const playAgain = document.createElement("button")
+    playAgain.setAttribute("id", "playAgain");
+    playAgain.textContent = "Play Again?";
+    playAgain.addEventListener("click", ()=> {window.location.reload()});
+
 
     function playRound(humanChoice){
         function getComputerChoice(){
@@ -17,8 +26,6 @@ function playGame() {
         const computerChoice = getComputerChoice();
         const results = document.getElementById("results")
         const score = document.getElementById("score");
-
-
 
         if (computerChoice === humanChoice) {
             results.textContent = "You both chose the same thing. It's a tie!";
@@ -64,6 +71,7 @@ function playGame() {
             options.removeChild(rock);
             options.removeChild(paper);
             options.removeChild(scissors);
+            options.appendChild(playAgain);
             return;
         }
 
@@ -72,6 +80,7 @@ function playGame() {
             options.removeChild(rock);
             options.removeChild(paper);
             options.removeChild(scissors);
+            options.appendChild(playAgain);
             return;
         }
     }
