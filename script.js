@@ -3,9 +3,9 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    getElementById("rock").addEventListener("click", ()=> { playRound("r") });
-    getElementById("paper").addEventListener("click", ()=> { playRound("p") });
-    getElementById("scissors").addEventListener("click", ()=> { playRound("s") });
+    document.getElementById("rock").addEventListener("click", ()=> { playRound("r") });
+    document.getElementById("paper").addEventListener("click", ()=> { playRound("p") });
+    document.getElementById("scissors").addEventListener("click", ()=> { playRound("s") });
 
     function playRound(humanChoice){
         function getComputerChoice(){
