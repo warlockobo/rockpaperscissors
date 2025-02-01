@@ -3,21 +3,17 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    function playRound(){
+    getElementById("rock").addEventListener("click", ()=> { playRound("r") };
+    getElementById("paper").addEventListener("click", ()=> { playRound("p") };
+    getElementById("scissors").addEventListener("click", ()=> { playRound("s") };
+
+    function playRound(humanChoice){
         function getComputerChoice(){
             const choices = ["r", "p", "s"];
             const index = Math.floor(Math.random() * 3);
             return choices[index];
         }
         const computerChoice = getComputerChoice();
-     
-        function getHumanChoice(){
-            const humanChoice = prompt("Choose rock, paper, or scissors.");
-        
-            return humanChoice[0].toLowerCase();
-        }
-        
-        const humanChoice = getHumanChoice();
 
         if (computerChoice === humanChoice) {
             console.log("You both chose the same thing. It's a tie!");
