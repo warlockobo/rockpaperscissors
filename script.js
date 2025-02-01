@@ -48,9 +48,5 @@ function playGame() {
         }
     }
 
-    while (humanScore < 5 && computerScore < 5){
-        console.log("The score is Human: " + humanScore + " " + "and Computer: " + computerScore)
-        playRound();
-    }
 }
 playGame();
