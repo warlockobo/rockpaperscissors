@@ -44,6 +44,8 @@ function playGame() {
             computerScore++;
         }
     }
-
+    while (humanScore < 5 && computerScore < 5){
+        playRound();
+    }
 }
 playGame();
